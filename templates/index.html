@@ -1,1 +1,19 @@
-templates/index.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>資料作成アプリ雛形</title>
+</head>
+<body>
+  <h1>資料作成アプリ（雛形）</h1>
+  <form method="POST">
+    <textarea name="content" rows="6" cols="60" placeholder="テキストを入力してください"></textarea><br>
+    <button type="submit">送信</button>
+  </form>
+
+  {% if content %}
+    <h2>入力内容:</h2>
+    <p>{{ content }}</p>
+  {% endif %}
+</body>
+</html>
