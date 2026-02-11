@@ -2,13 +2,79 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>資料作成アプリ雛形</title>
+  <title>遭難事故台本プロンプト作成</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f7f7fb;
+      color: #222;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+    p {
+      color: #555;
+    }
+    label {
+      display: block;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+    .hint {
+      margin: 6px 0 0;
+      color: #777;
+      font-size: 12px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      min-height: 120px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 24px;
+      background: #4a4aff;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
-  <h1>資料作成アプリ（雛形）</h1>
-  <form method="POST">
-    <textarea name="content" rows="6" cols="60" placeholder="テキストを入力してください"></textarea><br>
-    <button type="submit">送信</button>
-  </form>
+  <div class="container">
+    <h1>遭難事故台本プロンプト作成</h1>
+    <p>指定の厳守マニュアルに沿ったプロンプトを作成します。テーマと参考資料を入力してください。</p>
+    <form method="POST">
+      <label for="theme">今回の作成テーマ</label>
+      <textarea id="theme" name="theme" placeholder="例: 2012年に○○山で起きた遭難事故の真相"></textarea>
+
+      <label for="reference">参考資料（URL / メモ）</label>
+      <textarea id="reference" name="reference" placeholder="例: https://example.com/report または 関連ニュースの要約"></textarea>
+      <p class="hint">参考資料は複数行で入力できます。URLがない場合はメモだけでも構いません。</p>
+
+      <button type="submit">プロンプトを生成する</button>
+    </form>
+  </div>
 </body>
 </html>
